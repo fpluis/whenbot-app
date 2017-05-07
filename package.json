@@ -1,11 +1,11 @@
 {
-  "name": "whenbot",
+  "name": "whenbot-app",
   "description": "Chatbot that uses WhenHub's API to manage schedules.",
   "version": "0.0.1",
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rtomrud/whenbot"
+    "url": "https://github.com/rtomrud/whenbot-app"
   },
   "author": "Artem Rudenko <rtomrud@gmail.com>",
   "contributors": [
