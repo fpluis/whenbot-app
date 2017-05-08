@@ -1,6 +1,8 @@
-const WHENHUB_ACCESS_TOKEN = "5E7zrXzTiHtDgLodKQOiP7JMF5MMM97lHmAaP820xPEBZ03iUhVYR5nruTobUwBP";
+//const WHENHUB_ACCESS_TOKEN = "5E7zrXzTiHtDgLodKQOiP7JMF5MMM97lHmAaP820xPEBZ03iUhVYR5nruTobUwBP";
+const WHENHUB_ACCESS_TOKEN = getQueryParameter().token;
+const WHENHUB_USER_ID = getQueryParameter().userId;
 
-const WHENHUB_API_HEADERS = {
+let WHENHUB_API_HEADERS = {
   'Content-Type': 'application/json',
   'Accept': 'application/json',
   'Authorization': WHENHUB_ACCESS_TOKEN

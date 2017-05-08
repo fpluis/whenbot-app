@@ -1,0 +1,37 @@
+{
+  "entrypoint": "index.html",
+  "sources": [
+    "images/**/*",
+    "js/**/*"
+  ],
+  "builds": [
+    {
+      "name": "unbundled",
+      "addServiceWorker": false,
+      "bundle": false,
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "js": {
+        "minify": true
+      }
+    },
+    {
+      "name": "bundled",
+      "addServiceWorker": false,
+      "bundle": false,
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "js": {
+        "minify": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": [
+    "assertive",
+    "assertive/configs/browser",
+    "assertive/configs/html",
+    "assertive/configs/filenames"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6
+  }
+}
