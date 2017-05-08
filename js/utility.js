@@ -1,67 +1,91 @@
-const isSameStringCaseInsensitive = (firstItem, secondItem) => {
-  const firstString = String(firstItem);
-  const secondString = String(secondItem);
-  return firstString != null
-    && secondString != null
-    && firstString.toLowerCase() == secondString.toLowerCase();
-};
+const ENTER_KEY_CODE = "13";
 
-// Adapted from http://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
-const objectIsEmpty = (object) => {
-  return object != null
-    && Object.keys(object).length === 0
-    && object.constructor === Object;
-};
+let userInput, micButton, volumeButton;
 
-const arrayIsEmpty = (array) => {
-  return array == null || array == [] || array.length <= 0;
-};
+window.onload = () => {
+  userInput = document.getElementById("text-input");
+  micButton = document.getElementById("voice-input");
+  volumeButton = document.getElementById("voice-output");
 
-const valueToDateString = (value) => {
-  const dateOptions = {
-    weekday: "long",
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit"
-  };
-  return new Date(value).toLocaleTimeString("en-us", dateOptions);
-};
+  userInput.onkeypress = (keyPressedEvent) => {
+    const event = keyPressedEvent || window.event;
+    const charCode = event.which || event.keyCode;
 
-const assignProperties = (object, objectWithNewProperties) => {
-  if (objectWithNewProperties == null) {
-    Object.keys(objectWithNewProperties).forEach((key) => {
-      object[key] = objectWithNewProperties[key];
-    });
-    return object;
-  } else {
-    return object;
-  }
-};
-
-const removeFromArrayById = (array, id) => {
-  return array.filter((item) => {
-    return item.id != id;
-  });
-};
-
-// Credit: Quentin
-// Taken from http://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
-const getQueryParameter = () => {
-  var queryString = {};
-  var query = window.location.search.substring(1);
-  var vars = query.split("&");
-  for (var i = 0; i < vars.length; i++) {
-    var pair = vars[i].split("=");
-    if (typeof queryString[pair[0]] === "undefined") {
-      queryString[pair[0]] = decodeURIComponent(pair[1]);
-    } else if (typeof queryString[pair[0]] === "string") {
-      var arr = [queryString[pair[0]], decodeURIComponent(pair[1])];
-      queryString[pair[0]] = arr;
-    } else {
-      queryString[pair[0]].push(decodeURIComponent(pair[1]));
+    if (charCode == ENTER_KEY_CODE) {
+      const text = userInput.value;
+      processUserMessage(text);
     }
   }
-  return queryString;
-};
+
+  micButton.onclick = () => {
+    recognizeSpeech(processUserMessage);
+  }
+
+  volumeButton.onclick = () => {
+    textToSpeechEnabled = !textToSpeechEnabled;
+    volumeButton.src = textToSpeechEnabled
+      ? "images/volume_up.svg"
+      : "images/volume_mute.svg";
+  }
+
+  sendTextToServer("I want to start fresh")
+  .then((result) => {
+    processChatbotResult(result);
+  });
+}
+
+const processUserMessage = (text) => {
+  addMessage(text, "self");
+  cleanTextInput();
+  sendTextToServer(text)
+  .then((result) => {
+    processChatbotResult(result);
+  });
+}
+
+const say = (message) => {
+  addMessage(message, "other");
+  speakMessage(message);
+}
+
+const addMessage = (text, person) => {
+  const chat = document.getElementById("chat");
+  const newMessage = document.createElement("li");
+  newMessage.setAttribute("class", person);
+  const message = document.createElement("div");
+  message.setAttribute("class", "msg");
+  const messageContent = document.createElement("p");
+  messageContent.textContent = text;
+  message.appendChild(messageContent);
+  const timeStamp = document.createElement("time");
+  const time = new Date();
+  timeStamp.textContent = time.getHours() + ":" + time.getMinutes();
+  message.appendChild(timeStamp);
+  newMessage.appendChild(message);
+
+  chat.appendChild(newMessage);
+}
+
+const cleanTextInput = () => {
+  userInput.value = "";
+}
+
+const saySchedulesToUser = (schedules) => {
+  const scheduleMessage = schedulesToMessage(schedules);
+  say(scheduleMessage);
+  if (schedules != null
+   && schedules.length > 1) {
+    const inviteToKnowMoreMessage = "If you want to know more, say 'show me schedule ...' and the number or name of the schedule";
+    say(inviteToKnowMoreMessage);
+  }
+}
+
+const sayEventsToUser = (events) => {
+  const eventMessage = eventsToMessage(events);
+  say(eventMessage);
+  if (events != null
+   && events.length > 1) {
+    const inviteToKnowMoreMessage = "If you want to know more, say 'show me event ...' and the number or name of the event";
+    say(inviteToKnowMoreMessage);
+  }
+}
