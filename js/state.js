@@ -1,4 +1,4 @@
-let textToSpeechEnabled = false;
+let textToSpeechEnabled = true;
 let currentSchedule, currentEvent, schedules, currentSchedules, events,
     currentEvents, lastCreatedEvent, lastCreatedSchedule;
 
