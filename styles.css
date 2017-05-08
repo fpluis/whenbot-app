@@ -93,8 +93,8 @@ h1 {
   background: var(--app-color-primary-4);
   border: none;
   outline: none;
-  padding-left: 55px;
-  padding-right: 55px;
+  padding-left: 56px;
+  padding-right: 56px;
   color: var(--app-color-primary-1);
   font-size: inherit;
 }
