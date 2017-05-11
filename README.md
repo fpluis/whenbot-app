@@ -1,10 +1,10 @@
 # whenbot
 
-Chatbot that uses WhenHub's API to manage your schedules. Entry into the Whenhub hackathon, Best Use of Whenhub API category. 
+Chatbot that uses WhenHub's API to manage your schedules. Entry into the WhenHub Hackathon, "Best Use of Whenhub API" category. 
 
 ## Usage 
 
-The whenbot can be accessed at the url https://studio.whenhub.com/signin/?redirect_url=https://rtomrud.github.io/whenbot-app/. After logging in, simply use the chat input to type or speak using the microphone, and whenbot will carry out your orders. By asking whenbot for help, it will read the list of available commands.
+The whenbot can be accessed at the url https://studio.whenhub.com/signin/?redirect_url=https://rtomrud.github.io/whenbot-app/. After logging in, simply use the chat input to type or speak using the microphone, and whenbot will carry out your orders. By asking WhenBot for help, it will read the list of available commands.
 
 ## What is it?
 
