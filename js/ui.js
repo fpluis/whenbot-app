@@ -49,22 +49,21 @@ const say = (message) => {
 }
 
 const addMessage = (text, person) => {
-  const chat = document.getElementById("chat");
-  const newMessage = document.createElement("li");
-  newMessage.setAttribute("class", person);
-  const message = document.createElement("div");
-  message.setAttribute("class", "msg");
-  const messageContent = document.createElement("p");
-  messageContent.textContent = text;
-  message.appendChild(messageContent);
+  const message = document.createElement("li");
+  message.classList.add(person);
+
+  const p = document.createElement("p");
+  p.textContent = text;
+  message.appendChild(p);
+
   const timeStamp = document.createElement("time");
   const time = new Date();
   timeStamp.textContent = time.getHours() + ":" + time.getMinutes();
   message.appendChild(timeStamp);
-  newMessage.appendChild(message);
 
-  chat.appendChild(newMessage);
-}
+  const messages = document.querySelector("ol");
+  messages.appendChild(message);
+};
 
 const cleanTextInput = () => {
   userInput.value = "";

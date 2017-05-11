@@ -8,10 +8,27 @@ html, body {
   --app-color-primary-4: #FFFFFF;
 
   background-color: var(--app-color-primary-1);
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
   margin: 0px auto;
+
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--app-color-primary-3);
+}
+
+article {
+  max-width: 576px;
+  max-height: 100vh;
+
+  display: flex;
+  flex-basis: 576px;
+  flex-direction: column;
 }
 
 h1 {
@@ -21,104 +38,82 @@ h1 {
   font-weight: 300;
 }
 
-::selection {
-  background-color: var(--app-color-primary-3);
-}
+/* Messages */
 
-#chat {
-  list-style: none;
-  background: none;
+ol {
   margin: 0;
-  padding: 0 0 50px 0;
-  margin-bottom: 10px;
+  padding: 0;
+
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
-#chat li {
-  padding: 0.5rem;
+li {
+  margin: 8px;
   overflow: hidden;
-  display: flex;
-}
-
-.msg {
-  min-width: 50px;
   padding: 10px;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.msg p {
+li p {
   font-size: 16px;
-  margin: 0 0 0.2rem 0;
+  margin: 0px;
 }
 
-.msg time {
+li time {
   font-size: 14px;
-  margin-top: 3px;
-  float: right;
+  margin-top: 4px;
   cursor: default;
 }
 
-.other .msg {
+li.other {
   background-color: var(--app-color-primary-4);
   color: var(--app-color-primary-1);
 }
 
-.other .msg {
-  order: 1;
-}
-
-.other time {
+li.other time {
   color: var(--app-color-primary-2);
 }
 
-.self {
+li.self {
   background-color: var(--app-color-primary-1);
   color: var(--app-color-primary-4);
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
-.self .msg {
-  order: 1;
-}
-
-.self time {
+li.self time {
   color: var(--app-color-primary-3);
 }
 
-#text-input {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  height: 56px;
-  z-index: 99;
+/* Inputs */
+
+section {
   background: var(--app-color-primary-4);
+  color: var(--app-color-primary-1);
+  padding: 4px;
+
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+input[type="text"] {
   border: none;
   outline: none;
-  padding-left: 56px;
-  padding-right: 56px;
-  color: var(--app-color-primary-1);
   font-size: inherit;
+
+  flex-grow: 1;
 }
 
-#voice-input {
-  left: 8px;
-}
-
-#voice-output {
-  right: 8px;
-}
-
-#voice-input, #voice-output {
-  position: fixed;
-  display: block;
-  bottom: 8px;
+input[type="image"] {
   width: 24px;
   height: 24px;
-  padding: 8px;
-  z-index: 100;
+  padding: 12px;
   cursor: pointer;
   opacity: 0.87;
 }
 
-#voice-input:hover, #voice-output:hover {
+input[type="image"]:hover {
   opacity: 0.65;
 }
