@@ -64,6 +64,7 @@ const addMessage = (text, person) => {
   newMessage.appendChild(message);
 
   chat.appendChild(newMessage);
+  newMessage.scrollIntoView();
 }
 
 const cleanTextInput = () => {
