@@ -1,34 +1,25 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 
-html, body {
+body {
   /* Negative gray theme as primary colors */
   --app-color-primary-1: #212121;
   --app-color-primary-2: #595959;
   --app-color-primary-3: #ABABAB;
   --app-color-primary-4: #FFFFFF;
 
+  --chat-app-max-width: 576px;
+  --chat-app-margin-and-padding: 8px;
+
   background-color: var(--app-color-primary-1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  margin: 0px auto;
-
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
+  margin: 0 auto;
+  max-width: var(--chat-app-max-width);
 }
 
 ::selection {
   background-color: var(--app-color-primary-3);
-}
-
-article {
-  max-width: 576px;
-  max-height: 100vh;
-
-  display: flex;
-  flex-basis: 576px;
-  flex-direction: column;
 }
 
 h1 {
@@ -38,23 +29,15 @@ h1 {
   font-weight: 300;
 }
 
-/* Messages */
-
 ol {
-  margin: 0;
+  margin: 0 0 calc(3 * var(--chat-app-margin-and-padding) + 48px);
   padding: 0;
-
-  flex-grow: 1;
-  overflow-y: auto;
 }
 
 li {
-  margin: 8px;
+  margin: var(--chat-app-margin-and-padding);
+  padding: var(--chat-app-margin-and-padding);
   overflow: hidden;
-  padding: 10px;
-
-  display: flex;
-  flex-direction: column;
 }
 
 li p {
@@ -64,8 +47,6 @@ li p {
 
 li time {
   font-size: 14px;
-  margin-top: 4px;
-  cursor: default;
 }
 
 li.other {
@@ -86,15 +67,17 @@ li.self time {
   color: var(--app-color-primary-3);
 }
 
-/* Inputs */
-
 section {
   background: var(--app-color-primary-4);
   color: var(--app-color-primary-1);
   padding: 4px;
-
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--chat-app-max-width);
   display: flex;
-  flex-shrink: 0;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -102,7 +85,9 @@ input[type="text"] {
   border: none;
   outline: none;
   font-size: inherit;
-
+  height: 24px;
+  min-width: 24px;
+  padding: 12px 0;
   flex-grow: 1;
 }
 
