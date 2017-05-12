@@ -122,3 +122,8 @@ h1 {
 #voice-input:hover, #voice-output:hover {
   opacity: 0.65;
 }
+
+img[src="images/loading.svg"] {
+  color: var(--app-color-primary-3);
+  margin: 8px 8px 0px;
+}

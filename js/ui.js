@@ -1,6 +1,7 @@
 const ENTER_KEY_CODE = "13";
 
 let userInput, micButton, voiceButton;
+let lastMessageId = 1;
 
 window.onload = () => {
   userInput = document.getElementById("text-input");
@@ -35,11 +36,14 @@ window.onload = () => {
 }
 
 const processUserMessage = (text) => {
-  addMessage(text, "self");
+  const messageId = lastMessageId;
+  lastMessageId += 1;
+  addMessage(text, "self", messageId);
   cleanTextInput();
   sendTextToServer(text)
   .then((result) => {
     processChatbotResult(result);
+    removeLoading(messageId);
   });
 }
 
@@ -48,7 +52,7 @@ const say = (message) => {
   speakMessage(message);
 }
 
-const addMessage = (text, person) => {
+const addMessage = (text, person, messageId) => {
   const chat = document.getElementById("chat");
   const newMessage = document.createElement("li");
   newMessage.setAttribute("class", person);
@@ -60,11 +64,21 @@ const addMessage = (text, person) => {
   const timeStamp = document.createElement("time");
   const time = new Date();
   timeStamp.textContent = time.getHours() + ":" + time.getMinutes();
-  message.appendChild(timeStamp);
+  if (person === "self" && typeof messageId !== "undefined") {
+    const loading = document.createElement("img");
+    loading.setAttribute("src", "images/loading.svg");
+    loading.setAttribute("id", messageId);
+    message.appendChild(loading);
+  }
   newMessage.appendChild(message);
-
+  message.appendChild(timeStamp);
   chat.appendChild(newMessage);
 }
+
+const removeLoading = (messageId) => {
+  const loading = document.getElementById(messageId);
+  loading.parentNode.removeChild(loading);
+};
 
 const cleanTextInput = () => {
   userInput.value = "";
