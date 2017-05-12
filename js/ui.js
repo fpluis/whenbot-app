@@ -59,7 +59,7 @@ const addMessage = (text, person) => {
   message.appendChild(messageContent);
   const timeStamp = document.createElement("time");
   const time = new Date();
-  timeStamp.textContent = time.getHours() + ":" + time.getMinutes();
+  timeStamp.textContent = time.toLocaleTimeString();
   message.appendChild(timeStamp);
   newMessage.appendChild(message);
 
