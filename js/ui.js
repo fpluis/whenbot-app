@@ -53,27 +53,29 @@ const say = (message) => {
 }
 
 const addMessage = (text, person, messageId) => {
-  const chat = document.getElementById("chat");
-  const newMessage = document.createElement("li");
-  newMessage.setAttribute("class", person);
-  const message = document.createElement("div");
-  message.setAttribute("class", "msg");
-  const messageContent = document.createElement("p");
-  messageContent.textContent = text;
-  message.appendChild(messageContent);
+  const message = document.createElement("li");
+  message.classList.add(person);
+
+  const p = document.createElement("p");
+  p.textContent = text;
+  message.appendChild(p);
+
   const timeStamp = document.createElement("time");
   const time = new Date();
-  timeStamp.textContent = time.getHours() + ":" + time.getMinutes();
+  timeStamp.textContent = time.toLocaleTimeString();
+  message.appendChild(timeStamp);
+
   if (person === "self" && typeof messageId !== "undefined") {
     const loading = document.createElement("img");
     loading.setAttribute("src", "images/loading.svg");
     loading.setAttribute("id", messageId);
     message.appendChild(loading);
   }
-  newMessage.appendChild(message);
-  message.appendChild(timeStamp);
-  chat.appendChild(newMessage);
-}
+
+  const messages = document.querySelector("ol");
+  messages.appendChild(message);
+  message.scrollIntoView();
+};
 
 const removeLoading = (messageId) => {
   const loading = document.getElementById(messageId);
