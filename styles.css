@@ -30,7 +30,7 @@ h1 {
 }
 
 ol {
-  margin: 0 0 calc(3 * var(--chat-app-margin-and-padding) + 48px);
+  margin: 0 0 calc(var(--chat-app-margin-and-padding) + 56px);
   padding: 0;
 }
 
@@ -105,5 +105,5 @@ input[type="image"]:hover {
 
 img[src="images/loading.svg"] {
   color: var(--app-color-primary-3);
-  margin: 8px 8px 0px;
+  margin: 0px 8px 1px;
 }
