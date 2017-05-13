@@ -104,6 +104,6 @@ input[type="image"]:hover {
 }
 
 img[src="images/loading.svg"] {
-  color: var(--app-color-primary-3);
+  opacity: 0.67;
   margin: 0px 8px 1px;
 }
