@@ -38,10 +38,14 @@ const getScheduleInformation = (schedule) => {
 const descriptionToMessage = (description) => {
   let message = "";
   if (description != null) {
-    message += " The description says \"" + description + "\".";
+    message += " The description says \"" + extractContent(description) + "\".";
   }
   return message;
 }
+
+const extractContent = (html) =>
+  (new DOMParser())
+    .parseFromString(html, "text/html").documentElement.textContent;
 
 const locationToMessage = (location) => {
   let message = "";
