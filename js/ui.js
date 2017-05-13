@@ -58,7 +58,7 @@ const addMessage = (text, person) => {
 
   const timeStamp = document.createElement("time");
   const time = new Date();
-  timeStamp.textContent = time.getHours() + ":" + time.getMinutes();
+  timeStamp.textContent = time.toLocaleTimeString();
   message.appendChild(timeStamp);
 
   const messages = document.querySelector("ol");
