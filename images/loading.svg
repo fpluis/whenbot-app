@@ -1,0 +1,47 @@
+<svg fill="#ffffff" height="8" viewBox="0 0 32 8" width="32" xmlns="http://www.w3.org/2000/svg">
+  <circle id="circle" cx="4" cy="4" r="4">
+    <animate 
+      attributeName="r"
+      from="0" to="0"
+      dur="1.5s"
+      begin="0s"
+      values="0; 4; 0; 0"
+      keyTimes="0; 0.4; 0.8; 1"
+      keySplines="0.4 0 0.2 1;
+                  0.4 0 0.2 1;
+                  0.4 0 0.2 1;
+                  0.4 0 0.2 1;"
+      repeatCount="indefinite"
+    />
+  </circle>
+  <circle id="circle" cx="16" cy="4" r="4">
+    <animate 
+      attributeName="r"
+      from="0" to="0"
+      dur="1.5s"
+      begin="0.15s"
+      values="0; 4; 0; 0"
+      keyTimes="0; 0.4; 0.8; 1"
+      keySplines="0.4 0 0.2 1;
+                  0.4 0 0.2 1;
+                  0.4 0 0.2 1;
+                  0.4 0 0.2 1;"
+      repeatCount="indefinite"
+    />
+  </circle>
+  <circle id="circle" cx="28" cy="4" r="4">
+    <animate 
+      attributeName="r"
+      from="0" to="0"
+      dur="1.5s"
+      begin="0.3s"
+      values="0; 4; 0; 0"
+      keyTimes="0; 0.4; 0.8; 1"
+      keySplines="0.4 0 0.2 1;
+                  0.4 0 0.2 1;
+                  0.4 0 0.2 1;
+                  0.4 0 0.2 1;"
+      repeatCount="indefinite"
+    />
+  </circle>
+</svg>
