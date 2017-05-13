@@ -24,6 +24,7 @@ window.onload = () => {
 
   voiceButton.onclick = () => {
     textToSpeechEnabled = !textToSpeechEnabled;
+    window.speechSynthesis.cancel();
     voiceButton.src = textToSpeechEnabled
       ? "images/volume_up.svg"
       : "images/volume_mute.svg";
