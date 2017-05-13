@@ -63,6 +63,7 @@ const addMessage = (text, person) => {
 
   const messages = document.querySelector("ol");
   messages.appendChild(message);
+  message.scrollIntoView();
 };
 
 const cleanTextInput = () => {
