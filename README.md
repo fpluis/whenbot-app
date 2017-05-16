@@ -11,3 +11,7 @@ Try it at https://studio.whenhub.com/signin/?redirect_url=https://rtomrud.github
 The WhenBot allows users to add, see, edit or delete their WhenHub schedules and events. Additionally, users can "timeshift" a schedule, moving its events in time any arbitrary time amount, or to any particular date.
 
 All the interaction is performed using natural language, and although there is a chat interface, it is designed so that users can speak to it and listen without having to look at the screen. This makes it ideal for situations where the user cannot use a computer screen, but still wants to quickly check or change schedules or events.
+
+## Disclaimer
+
+This is just a proof of concept demo. It only supports some browsers, as it uses experimental browser APIs and ES6 syntax, with neither polyfills nor transpilation. We only tested it with the latest version of Chrome on desktop and mobile. Also, it isn't optimized for production (not bundled, minified and gzipped).
