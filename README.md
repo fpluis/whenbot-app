@@ -4,7 +4,7 @@ Chatbot that uses WhenHub's API to manage your schedules. Entry into the WhenHub
 
 ## Usage 
 
-Try it at https://studio.whenhub.com/signin/?redirect_url=https://rtomrud.github.io/whenbot-app/. After logging in, use the chat input to type or speak using the microphone, and WhenBot will carry out your orders. By asking for help, it will read the list of available actions.
+Try the [demo]. After logging in, use the chat input to type or speak using the microphone, and WhenBot will carry out your orders. By asking for help, it will read the list of available actions.
 
 ## What is it?
 
@@ -14,4 +14,6 @@ All the interaction is performed using natural language, and although there is a
 
 ## Disclaimer
 
-This is just a proof of concept demo. It only supports some browsers, as it uses experimental browser APIs and ES6 syntax, with neither polyfills nor transpilation. We only tested it with the latest version of Chrome on desktop and mobile. Also, it isn't optimized for production (not bundled, minified and gzipped).
+The [demo] is just a proof of concept. It only supports some browsers, as it uses experimental browser APIs and ES6 syntax, with neither polyfills nor transpilation. Tested only with the latest version of Chrome. Also, it isn't optimized for production (not bundled, minified and gzipped).
+
+[demo]: https://studio.whenhub.com/signin/?redirect_url=https://rtomrud.github.io/whenbot-app/
