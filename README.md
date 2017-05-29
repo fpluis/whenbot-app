@@ -6,6 +6,8 @@ Chatbot that uses WhenHub's API to manage your schedules. Entry into the WhenHub
 
 Try the [demo]. After logging in, use the chat input to type or speak using the microphone, and WhenBot will carry out your orders. By asking for help, it will read the list of available actions.
 
+_Note that the demo is currently not working as WhenHub changed the login for APIs method._
+
 ## What is it?
 
 The WhenBot allows users to add, see, edit or delete their WhenHub schedules and events. Additionally, users can "timeshift" a schedule, moving its events in time any arbitrary time amount, or to any particular date.
