@@ -4,9 +4,9 @@ Chatbot that uses WhenHub's API to manage your schedules. Entry into the WhenHub
 
 ## Usage
 
-_Note that the demo is currently not working as the authentication method (login) we were using has been removed from WhenHub's API._
+_Note that the demo is currently working with one user's hardcoded access key in the URL, as the redirect link provided by Whenhub unexpectedly ceased to work._
 
-~~Try the [demo].~~ After logging in, use the chat input to type or speak using the microphone, and WhenBot will carry out your orders. By asking for help, it will read the list of available actions.
+Try the [demo] After logging in, use the chat input to type or speak using the microphone, and WhenBot will carry out your orders. By asking for help, it will read the list of available actions.
 
 ## What is it?
 
