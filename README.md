@@ -18,4 +18,4 @@ All the interaction is performed using natural language, and although there is a
 
 The demo is just a proof of concept. It only supports some browsers, as it uses experimental browser APIs and ES6 syntax, with neither polyfills nor transpilation. Tested only with the latest version of Chrome. Also, it isn't optimized for production (not bundled, minified and gzipped).
 
-[demo]: https://studio.whenhub.com/signin/?redirect_url=https://rtomrud.github.io/whenbot-app/
+[demo]: https://rtomrud.github.io/whenbot-app/?userId=5900500b5467923f8478d210&token=X4J90Y4jkdMZOKTneq5gbs6AAxr45Yb7h8gDIysXNvFJE7UvKFlHYoYua0XBxD5i
